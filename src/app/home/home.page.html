@@ -8,12 +8,12 @@
 
 <ion-content>
   <div class="ion-padding">
-    <ion-searchbar></ion-searchbar>
-    <!-- <ion-content
-      [scrollEvents]="true"
-      (ionScrollStart)="logScrollStart()"
-      (ionScroll)="logScrolling($event)"
-      (ionScrollEnd)="logScrollEnd()">
-    </ion-content> -->
+    <ion-searchbar [(ngModel)]="searchChain" (ionChange)="search($event)"></ion-searchbar>
+    <ion-list>
+      <ion-item button *ngFor="let item of (results | async)" [routerLink]="['/', 'movie', item.id]">
+        {{ item.title }}
+      </ion-item>
+    </ion-list>
+  
   </div>
 </ion-content>
