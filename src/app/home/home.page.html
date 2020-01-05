@@ -8,7 +8,7 @@
 
 <ion-content>
   <div class="ion-padding">
-    <ion-searchbar [(ngModel)]="searchChain" (ionChange)="search($event)"></ion-searchbar>
+    <ion-searchbar value="Ionic" [(ngModel)]="searchChain" (ionChange)="search($event)"></ion-searchbar>
     <ion-list>
       <ion-item button *ngFor="let item of (results | async)" [routerLink]="['/', 'movie', item.id]">
         {{ item.title }}

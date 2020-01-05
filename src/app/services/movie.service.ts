@@ -31,7 +31,8 @@ export class MovieService {
     return this.http.get(url, this.authHeaders).pipe(
       map(movies => {
         console.log("Entero: " + movies);
-        return movies['title'];
+        console.log("Intento devolver movies['title']: ", movies[1]);
+        return movies;
       })
     );
   }
