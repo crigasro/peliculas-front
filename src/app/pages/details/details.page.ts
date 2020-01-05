@@ -23,10 +23,12 @@ export class DetailsPage implements OnInit {
       err => { console.log("Error while getting movie title: ", err); }
     );
 
-    this.movieService.getMovieDetail(id, MovieDetail.cast).subscribe(
-      res => { this.cast = res.cast; },
-      err => { console.log("Error while getting movie cast: ", err); }
-    );
+    this.cast = this.movieService.getMovieDetail(id, MovieDetail.cast);
+    console.log(this.cast);
+    // .subscribe(
+    //   res => { this.cast = res.cast; },
+    //   err => { console.log("Error while getting movie cast: ", err); }
+    // );
 
     this.movieService.getMovieDetail(id, MovieDetail.description).subscribe(
       res => { this.description = res.description; },
