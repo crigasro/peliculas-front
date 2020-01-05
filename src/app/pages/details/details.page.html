@@ -1,27 +1,28 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Detalles de {{ title }}</ion-title>
+    <ion-title color="primary">Detalles de {{ title }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-card>
-    <!-- <ion-card-header>
-      
-    </ion-card-header> -->
-    <ion-card-content text-center>
+
+    <ion-card-content class="ion-text-center">
       <ion-grid>
-        <ion-col>
+        <!-- Poster  -->
+        <ion-col class="image">
           <img [src]="poster" style="height: 250px;width: 175px;" class="info-img ion-float-left">
         </ion-col>
     
-        <ion-item lines="none">
-          <ion-label position="fixed" color="primary">Resumen</ion-label>
-          <ion-textarea>{{ description }}</ion-textarea>
-        </ion-item>
+        <!-- Seccion de la descripcion  -->
+        <ion-col>
+          <ion-item lines="none" class="description">
+            <ion-label position="fixed" color="primary">Resumen</ion-label>
+            <ion-textarea>{{ description }}</ion-textarea>
+          </ion-item>
+        </ion-col>
     
-        
-        <ion-grid>
+        <ion-list scroll="true" class="cast_list_title">
           <ion-row>
             <ion-col>
               <ion-label color="primary">Actor</ion-label>
@@ -30,15 +31,15 @@
               <ion-label color="primary">Rol</ion-label>
             </ion-col>
           </ion-row>
-    
-          <ion-list>
-            <ion-row *ngFor="let item of (cast | async)">
-              <ion-col>{{ item.name }}</ion-col >
-              <ion-col>{{ item.character }}</ion-col>
-            </ion-row>
-          </ion-list>
-        </ion-grid>
+
+          <!-- Listado de actores -->
+          <ion-row *ngFor="let item of (cast | async)">
+            <ion-col>{{ item.name }}</ion-col >
+            <ion-col>{{ item.character }}</ion-col>
+          </ion-row>
+        </ion-list>
       </ion-grid>
+
     </ion-card-content>
   </ion-card>
 </ion-content>

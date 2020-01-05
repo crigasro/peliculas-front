@@ -1,17 +1,18 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      Buscador de películas
-    </ion-title>
+    <ion-title color="primary">Buscador de películas</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="ion-padding">
-    <ion-searchbar value="Ionic" [(ngModel)]="searchChain" (ionChange)="search($event)"></ion-searchbar>
+    <!-- Barra de busqueda -->
+    <ion-searchbar color="light" value="Ionic" [(ngModel)]="searchChain" (ionChange)="search($event)"></ion-searchbar>
+    
+    <!-- Listado de resultados -->
     <ion-list>
       <ion-item button *ngFor="let item of (results | async)" [routerLink]="['/', 'details', item.id]">
-        {{ item.title }}
+        <ion-text>{{ item.title }}</ion-text>
       </ion-item>
     </ion-list>
   
