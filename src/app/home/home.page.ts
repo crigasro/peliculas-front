@@ -16,10 +16,5 @@ export class HomePage {
 
   search(event) {
     this.results = this.movieService.searchMovies(this.searchChain);
-    console.log(this.results);
-    // this.results.subscribe(
-    //   res => {},
-    //   err => {}
-    // )
   }
 }

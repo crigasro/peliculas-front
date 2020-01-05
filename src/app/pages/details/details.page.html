@@ -1,9 +1,25 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>details</ion-title>
+    <ion-title>Detalles de {{ title }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-card>
+    <ion-card-header>
+      
+    </ion-card-header>
+    
+    <ion-card-content>
+      <ion-img [src]="poster" width="100" height="100"></ion-img>
+      <ion-card-title>Resumen</ion-card-title>
+      {{ description }}
 
+      <ion-list>
+        <ion-item *ngFor="let item of cast">
+          {{ cast.name }}
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
